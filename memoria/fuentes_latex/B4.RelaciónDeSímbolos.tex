@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Documento LaTeX 											  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título:	Lista de símbolos
+% Autor:  Ignacio Moreno Doblas
+% Fecha:  2025-10-29
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% !TEX root = A0.MiTFG.tex
+
+% ================== Lista de símbolos (sin negrita en la etiqueta) ==================
+% ---------------- Lista de símbolos en UNA sola línea ----------------
+\chapterbeginx{Símbolos}
+
+% ancho de la columna de símbolos = el del símbolo más largo
+\newlength{\symbwidth}
+\settowidth{\symbwidth}{DLMS/COSEMM}
+
+\begin{description}[
+  style=standard,      % MISMA línea (no nextline)
+  font=\normalfont,    % sin negrita en la etiqueta
+  labelwidth=\symbwidth,
+  labelsep=1em,
+  leftmargin=!,
+  itemsep=2pt
+]
+
+% -------- LATINOS (orden alfabético) --------
+\item[$\mathrm{BF}_{\text{disp}}$] Factor de ensanchamiento por dispersión cromática; adimensional
+\item[$\mathrm{BF}_{\text{turb}}$] Factor de ensanchamiento por turbulencia; adimensional
+\item[$\mathrm{BF}_{\text{total}}$] Factor de ensanchamiento total (dispersión $+$ turbulencia); adimensional
+\item[$C$] Parámetro de \textit{chirp} inicial del pulso; adimensional
+\item[$c$] Velocidad de la luz en el vacío; \si{\metre\per\second}
+\item[$C_{n}^{2}$] Parámetro estructural del índice de refracción; \si{\metre\tothe{-2/3}}
+\item[$E_{\text{out}}(t)$] Campo eléctrico real en recepción
+\item[$F_{\text{out}}(t)$] Envolvente compleja simulada en recepción; $|F_{\text{out}}|$ es su módulo
+\item[$\mathrm{FWHM}$] Ancho temporal a mitad de máxima; \si{\pico\second}
+\item[$\mathrm{FWHM}_{\text{disp}}$] Ancho debido únicamente a la dispersión; \si{\pico\second}
+\item[$\mathrm{FWHM}_{\text{turb}}$] Ancho debido únicamente a la turbulencia; \si{\pico\second}
+\item[$h$] Altura o altitud del enlace sobre el nivel del mar; \si{\metre}
+\item[$L_{0}$] Escala externa de von Kármán; \si{\metre}
+\item[$L_{D3}$] Longitud de dispersión de tercer orden asociada a $\beta_{3}$; típicamente \si{\kilo\metre}
+\item[$L_{D2}$] Longitud de dispersión de segundo orden asociada a $\beta_{2}$; típicamente \si{\kilo\metre}
+\item[$l_{0}$] Escala interna de von Kármán; \si{\metre}
+\item[$n$] Índice de refracción del medio
+\item[$P(h)$] Presión atmosférica a la altura $h$; \si{\pascal}
+\item[$T(h)$] Temperatura a la altura $h$; \si{\kelvin}
+\item[$U_{\text{out}}(t)$] Envolvente compleja en recepción; $|U_{\text{out}}|$ es la envolvente
+\item[$v_\mathrm{f}$] Velocidad de fase en el medio considerado; \si{\metre\per\second}
+\item[$z$] Distancia de propagación o longitud del enlace; \si{\kilo\metre}
+
+% -------- GRIEGOS (orden alfabético) --------
+\item[$\beta$] Constante de propagación del medio; \si{\per\metre}
+\item[$\beta_{2}$] Dispersión de velocidad de grupo; \si{\pico\second\squared\per\kilo\metre}
+\item[$\beta_{3}$] Dispersión de tercer orden; \si{\pico\second\cubed\per\kilo\metre}
+\item[$\lambda$] Longitud de onda; \si{\nano\metre} o \si{\micro\metre}
+\item[$\nu$] Frecuencia; \si{\hertz}
+
+\end{description}
+
+\chapterend

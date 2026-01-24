@@ -1,0 +1,74 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Documento LaTeX 																						%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Título:		Introducción
+% Autor:  	Ignacio Moreno Doblas
+% Fecha:  	2014-02-01, actualizado 2019-11-11
+% Versión:	0.5.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% !TEX root = A0.MiTFG.tex
+
+\chapterbegin{Introducción y visión general}
+\minitoc
+
+\section{Motivación y contexto}\label{sec:intro:obj}
+El crecimiento exponencial de la demanda de datos ha impulsado el desarrollo de tecnologías de comunicación capaces de soportar mayores capacidades y menor latencia que las convencionales. En este contexto, las comunicaciones ópticas inalámbricas se han posicionado como una alternativa muy atractiva frente a los sistemas de \acs{RF}~(\acl{RF}) en el medio atmosférico y frente a los sistemas acústicos en el medio acuático. Tanto en la atmósfera como en el océano, este tipo de enlaces inalámbricos han demostrado ofrecer tasas de transmisión muy superiores, alcanzando varios órdenes de magnitud más que sus homólogos acústicos y de RF. Estas ventajas justifican el interés creciente que suscita su estudio y desarrollo en aplicaciones de nueva generación.
+
+En el ámbito atmosférico, los sistemas de comunicaciones ópticas han demostrado ser capaces de manejar velocidades extremadamente altas: desde Pbps en enlaces de muy corta distancia, hasta Gbps en trayectos de varios kilómetros a través de la atmósfera terrestre. Además, los enlaces ópticos fuera de la atmósfera, en el espacio, presentan un potencial aún mayor debido a la ausencia de turbulencia y atenuación atmosférica \cite{Trichili}.
+
+Respecto al medio submarino, las comunicaciones acústicas permiten enlaces de varias decenas de kilómetros incluso, pero presentan limitaciones intrínsecas relacionadas con su rango de frecuencias de operación (desde decenas de hercios hasta cientos de kilohercios), lo que restringe las tasas de transmisión a unos pocos kbps\cite{Zeng}. Además, la baja velocidad de propagación del sonido en agua ($\approx$ \SI{1500}{\metre\per\second} a \SI{20}{\celsius}) provoca retardos significativos, típicamente de varios segundos\cite{Zeng}. Por su parte, las comunicaciones por RF en agua presentan una limitación fundamental debida a la conductividad del medio, lo que provoca una fuerte atenuación y restringe el alcance de los enlaces a apenas unos metros, incluso utilizando frecuencias extremadamente bajas (\SIrange{30}{300}{\hertz})\cite{Zeng}.
+
+Este incremento en capacidad y reducción de latencia que aportan las comunicaciones ópticas inalámbricas ha motivado un creciente interés en el uso de enlaces \acs{FSO}~(\acl{FSO}) y \acs{UOWC}~(\acl{UOWC}). En el ámbito de las comunicaciones FSO terrestres, se dispone de un amplio abanico de aplicaciones. Entre ellas destacan los enlaces de última milla, que permiten conectar usuarios finales con redes troncales sin necesidad de tender fibra, la interconexión de redes metropolitanas y la conectividad empresarial entre edificios. Asimismo, pueden emplearse como respaldo de fibra óptica, en enlaces de \textit{backhaul} (tramo de red que conecta los nodos de acceso con la red troncal), por ejemplo, en despliegues de \acs{5G}~(\acl{5G}) y \acs{6G}~(\acl{6G}), así como para la provisión de servicios temporales o de emergencia\cite{Willebrand}. Más allá del ámbito terrestre, también se investigan aplicaciones en zonas rurales desconectadas, en enlaces satelitales y espaciales, y en sistemas de \acs{QKD}~(\acl{QKD}) \cite{Sun}.
+
+Por otro lado, en el ámbito submarino se observa una creciente necesidad de disponer de enlaces inalámbricos capaces de ofrecer mayores velocidades y alcances operativos, dada la amplia variedad de aplicaciones actuales, que incluyen la exploración científica, la defensa, las operaciones de rescate, la monitorización ambiental y la comunicación de alta velocidad entre \acs{AUV}~(\acl{AUV}), entre otras. En este contexto, las comunicaciones ópticas emergen como una alternativa muy prometedora, ya que proporcionan un ancho de banda significativamente mayor y una latencia mucho menor que los sistemas acústicos y de RF, permitiendo abordar de forma más eficiente las necesidades de las aplicaciones submarinas modernas\cite{Zeng,Sun}.
+
+A pesar de su elevado potencial, las comunicaciones ópticas en medios no guiados presentan diversas limitaciones físicas que condicionan su rendimiento. En el caso de los enlaces atmosféricos y oceánicos, la atenuación constituye un factor crítico, ya que fenómenos como la absorción, la dispersión por partículas, la niebla o la turbidez del agua reducen significativamente la potencia recibida. A ello se suman las pérdidas geométricas asociadas a la divergencia natural del haz láser y la sensibilidad a errores de apuntamiento entre transmisor y receptor, especialmente relevantes en sistemas móviles o con plataformas sujetas a vibraciones.
+
+Otro elemento limitante es la turbulencia, presente tanto en la atmósfera como en el océano. En el canal atmosférico, las fluctuaciones aleatorias del índice de refracción inducidas por variaciones de temperatura alteran el frente de onda y generan fenómenos de \textit{scintillation}, provocando fluctuaciones aleatorias de fase e intensidad \cite{Trichili}. De forma análoga, en el medio submarino los gradientes de salinidad, presión y temperatura, junto con la presencia de burbujas y partículas en suspensión, originan turbulencia que deteriora la estabilidad y la potencia de la señal óptica, dificultando la detección fiable \cite{Sun}. Estas limitaciones reducen la fiabilidad del enlace e imponen restricciones severas al alcance y a la tasa de datos alcanzable.
+
+A estas limitaciones se suma la dispersión cromática, especialmente relevante en propagación de pulsos ultracortos. Dado que el índice de refracción depende de la frecuencia, las distintas componentes espectrales de un pulso viajan a velocidades diferentes, lo que provoca un ensanchamiento temporal progresivo. Este efecto dificulta la correcta reconstrucción del pulso en recepción y limita la capacidad de transmisión de los sistemas ópticos convencionales \cite{Agrawal}.
+
+A pesar de este conjunto de restricciones, los avances recientes en el uso de láseres de pulsos ultracortos han revelado un comportamiento sorprendentemente robusto frente a muchos de los fenómenos que degradan las comunicaciones ópticas tradicionales. Diversas demostraciones experimentales han mostrado tasas del orden de Gbps y una resistencia notable a la turbulencia, la dispersión y la absorción. Sin embargo, los mecanismos físicos responsables de esta resiliencia aún no se comprenden completamente, lo que dificulta la optimización y generalización de estos sistemas.
+
+La hipótesis predominante es que la estructura espacio-temporal de los pulsos ultracortos puede activar fenómenos no lineales poco explorados, como el autoenfoque o el desenfoque espontáneo, que podrían contribuir a estabilizar la propagación en medios altamente perturbados. Comprender y modelar estos procesos es esencial para evaluar el verdadero potencial de la tecnología \acs{USPL}~(\acl{USPL}) en escenarios donde las técnicas ópticas convencionales presentan limitaciones fundamentales. Entre estos escenarios destacan los enlaces atmosféricos de largo alcance, severamente afectados por la turbulencia y la niebla, y las comunicaciones submarinas, donde la absorción y dispersión del agua restringen actualmente la transmisión a largas distancias.
+
+En consecuencia, estudiar la propagación de pulsos ultracortos en medios no guiados proporciona una vía prometedora para superar estas limitaciones, abriendo la puerta al diseño de enlaces ópticos más robustos, de mayor alcance y con mayor capacidad tanto en atmósfera como en océano.
+
+\section{Objetivos}
+\subsection*{Objetivo general}
+Analizar la propagación de pulsos ópticos ultracortos en medios no guiados, tanto atmosféricos como oceánicos, evaluando el papel de la dispersión cromática y la turbulencia en la evolución temporal y espectral del pulso, con el fin de determinar sus implicaciones en el diseño y optimización de sistemas de comunicación óptica.
+
+\subsection*{Objetivos específicos}
+\begin{itemize}
+    \item Desarrollar un modelo teórico que describa la propagación de pulsos ultracortos en enlaces atmosféricos y oceánicos, incorporando los mecanismos de dispersión y las diferentes fuentes de turbulencia presentes en cada medio.
+
+    \item Simular en Matlab la evolución temporal y espectral de pulsos gaussianos sometidos a distintos regímenes de dispersión cromática y turbulencia, identificando patrones de ensanchamiento y distorsión.
+
+    \item Comparar los fenómenos de propagación en la atmósfera y en el océano, identificando similitudes, diferencias y condiciones que influyen de manera crítica en el rendimiento de la transmisión óptica.
+    
+    \item Determinar las principales limitaciones y oportunidades asociadas al diseño de enlaces FSO y UOWC, proponiendo criterios prácticos que faciliten su optimización y mitiguen los efectos adversos de la propagación.
+\end{itemize}
+
+\section{Metodología}
+Para alcanzar los objetivos de este proyecto, se ha seguido una metodología que combina el análisis teórico con la simulación numérica basada en Matlab. 
+
+Se ha llevado a cabo una revisión bibliográfica de trabajos de referencia internacional en el ámbito de la propagación de pulsos ópticos ultracortos, la dispersión cromática y la turbulencia en medios atmosféricos y oceánicos, lo que permitió recopilar las bases necesarias para formular los modelos matemáticos empleados. Estos incluyen el desarrollo en serie de Taylor del índice de refracción del aire y el cálculo de los parámetros de dispersión, así como el análisis matemático de los efectos de la turbulencia atmosférica, con especial atención al tratamiento temporal en condiciones de campo cercano. Este marco se utilizó para comprender la acción combinada de la dispersión cromática con la turbulencia atmosférica y posteriormente se extendió al medio oceánico, adaptando el análisis a las particularidades de este entorno.
+
+Con estas bases teóricas se implementaron simulaciones en Matlab destinadas a estudiar la evolución temporal y espectral de pulsos ópticos bajo diferentes escenarios de dispersión y turbulencia. El análisis se centró en pulsos gaussianos, por tratarse del caso más habitual en la literatura y por permitir una caracterización analítica clara de los efectos de ensanchamiento y distorsión. No obstante, la metodología desarrollada es fácilmente extensible al estudio de otras formas de pulso, como el hiperbólico-secante o el supergaussiano, que podrían considerarse en trabajos futuros para analizar la influencia de la forma del pulso en la propagación.
+
+Finalmente, los resultados obtenidos se analizaron de forma comparativa entre los medios atmosférico y oceánico, identificando similitudes y diferencias clave en el comportamiento de los pulsos y extrayendo conclusiones sobre las limitaciones y oportunidades que presentan estos fenómenos en el diseño de sistemas de comunicación óptica en medios no guiados.
+
+\section{Estructura del documento}
+El contenido de esta memoria se organiza en tres grandes bloques.
+
+En la Primera Parte, correspondiente a la Introducción, se presenta el contexto general del trabajo, la motivación que lo sustenta y los objetivos que se persiguen. Además, se describe la metodología empleada y se ofrece una visión global de la estructura del documento.
+
+La Segunda Parte constituye el núcleo teórico del trabajo. El Capítulo 2 presenta los fundamentos necesarios para el estudio de la propagación de pulsos ópticos ultracortos en medios no guiados. En primer lugar, se introducen los conceptos básicos de óptica relevantes para el análisis de la propagación. A continuación, se analizan las propiedades de los pulsos ultracortos y su evolución a lo largo del medio de propagación. Finalmente, se estudian los efectos de la turbulencia óptica.
+
+En el Capítulo 3 se estudia la propagación de estos pulsos en medios no guiados, analizando de manera diferenciada los casos atmosférico y oceánico. En particular, se desarrollan los modelos del índice de refracción, se aplican las expansiones en series de Taylor y se examinan los efectos de la dispersión cromática y de la turbulencia en cada entorno.
+
+En el Capítulo 4 se presentan las simulaciones realizadas en Matlab. En este capítulo se describen los escenarios considerados, los parámetros adoptados y los resultados obtenidos, analizando el ensanchamiento y la distorsión de los pulsos debidos a la dispersión cromática y a la turbulencia en la atmósfera y en el océano.
+
+Finalmente, la Tercera Parte recoge las conclusiones y las líneas futuras, en las que se sintetizan los aportes principales del estudio y se proponen direcciones de investigación que permitan profundizar en la modelización y optimización de la propagación óptica en medios no guiados.
+
+\chapterend
